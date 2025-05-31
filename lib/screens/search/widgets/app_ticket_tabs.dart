@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AppTicketTabs extends StatelessWidget {
-  const AppTicketTabs({super.key});
+  const AppTicketTabs({
+    super.key,
+    required this.firstTab,
+    required this.secondTab,
+  });
 
+  final String firstTab;
+  final String secondTab;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -12,10 +18,10 @@ class AppTicketTabs extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         color: const Color(0xFFF4F6FD),
       ),
-      child: const Row(
+      child: Row(
         children: [
-          AppTabs(tabTitle: 'Airline Tickets', isActive: true),
-          AppTabs(tabTitle: 'Hotels', rightTab: true),
+          AppTabs(tabTitle: firstTab, isActive: true),
+          AppTabs(tabTitle: secondTab, rightTab: true),
         ],
       ),
     );

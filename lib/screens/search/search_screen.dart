@@ -22,7 +22,7 @@ class SearchScreen extends StatelessWidget {
             style: AppStyles.headLine1.copyWith(fontSize: 35),
           ),
           const SizedBox(height: 20),
-          const AppTicketTabs(),
+          const AppTicketTabs(firstTab: 'Airline Tickets', secondTab: 'Hotels'),
           const SizedBox(height: 25),
           const AppTextIcon(
             icon: Icons.flight_takeoff_rounded,
