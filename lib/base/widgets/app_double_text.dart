@@ -6,29 +6,28 @@ class AppDoubleText extends StatelessWidget {
     super.key,
     required this.bigText,
     required this.smallText,
+    required this.onTap,
   });
 
   final String bigText;
   final String smallText;
 
+  final void Function() onTap;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(bigText, style: AppStyles.headLine2),
-          InkWell(
-            onTap: () {},
-            child: Text(
-              smallText,
-              style: AppStyles.textStyle.copyWith(
-                color: AppStyles.primaryColor,
-              ),
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(bigText, style: AppStyles.headLine2),
+        InkWell(
+          onTap: onTap,
+          child: Text(
+            smallText,
+            style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
