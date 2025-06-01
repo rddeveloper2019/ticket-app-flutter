@@ -6,13 +6,20 @@ class TextStyleThird extends StatelessWidget {
     super.key,
     required this.text,
     this.align = TextAlign.start,
+    this.isUncolored = false,
   });
 
   final String text;
   final TextAlign align;
+  final bool isUncolored;
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: AppStyles.headLine3.copyWith(color: Colors.white));
+    return Text(
+      text,
+      style: isUncolored
+          ? AppStyles.headLine3
+          : AppStyles.headLine3.copyWith(color: Colors.white),
+    );
   }
 }

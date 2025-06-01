@@ -6,16 +6,19 @@ class TextStyleFourth extends StatelessWidget {
     super.key,
     required this.text,
     this.align = TextAlign.start,
+    this.isUnColored = false,
   });
 
   final String text;
   final TextAlign align;
-
+  final bool isUnColored;
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: AppStyles.headLine4.copyWith(color: Colors.white),
+      style: isUnColored
+          ? AppStyles.headLine4
+          : AppStyles.headLine4.copyWith(color: Colors.white),
       textAlign: align,
     );
   }

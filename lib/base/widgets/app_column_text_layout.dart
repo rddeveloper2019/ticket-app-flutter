@@ -7,21 +7,30 @@ class AppColumnTextLayout extends StatelessWidget {
     required this.topText,
     required this.bottomText,
     this.align = CrossAxisAlignment.start,
+    this.isUnColored = false,
   });
 
   final String topText;
   final String bottomText;
   final CrossAxisAlignment align;
+  final bool isUnColored;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: align,
       children: [
-        Text(topText, style: AppStyles.headLine3.copyWith(color: Colors.white)),
+        Text(
+          topText,
+          style: isUnColored
+              ? AppStyles.headLine3
+              : AppStyles.headLine3.copyWith(color: Colors.white),
+        ),
         Text(
           bottomText,
-          style: AppStyles.headLine3.copyWith(color: Colors.white),
+          style: isUnColored
+              ? AppStyles.headLine4
+              : AppStyles.headLine4.copyWith(color: Colors.white),
         ),
       ],
     );
